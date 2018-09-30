@@ -12,40 +12,33 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll',
-    this.handleScroll)
+    window.addEventListener('scroll', this.handleScroll)
   }
 
-
   handleScroll = (event) => {
-    const scrollTop = window.pageY0ffset
+    const scrollTop = window.pageYOffset
 
     if (scrollTop > 50) {
       this.setState({ hasScrolled: true })
-     } else {
+    } else {
       this.setState({ hasScrolled: false })
-    } 
+    }
   }
 
-
+  
   render() {
-    return (  
-      <div className={this.state.hasScrolled ? 
-      'Header HeaderScrolled' : 'Header'}>
-          <div className="HeaderGroup">
-            <Link to="/"><img src={require('../images/logo-designcode.svg')} width="30" /></Link>
-            <Link to="/courses">Courses</Link>
-            <Link to="/downloads">Downloads</Link>
-            <Link to="/workshops">Workshops</Link>
-            <Link to="/buy"><button>Buy</button></Link>
+    return (
+      <div className={this.state.hasScrolled ? 'Header HeaderScrolled' : 'Header'}>
+        <div className="HeaderGroup">
+          <Link to="/"><img src={require('../images/Shaper.svg')} width="150" /></Link>
+          <Link to="/courses">Courses</Link>
+          <Link to="/downloads">Downloads</Link>
+          <Link to="/workshops">Workshops</Link>
+            <button>Buy</button>
         </div>
       </div>
     )
   }
 }
-
-
-
-
 
 export default Header
